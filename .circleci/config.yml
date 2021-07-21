@@ -17,20 +17,10 @@ references:
 jobs:
   test_clj:
     <<: *base_docker
+    parallelism: 4
     steps:
       - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          key: v1-dependencies-{{ checksum "deps.edn" }}
-
-      - save_cache:
-          paths:
-            - ~/.m2
-
-          key: v1-dependencies-{{ checksum "deps.edn" }}
-
       - run: make ci-test
-
       - store_test_results:
           path: test-results
 
