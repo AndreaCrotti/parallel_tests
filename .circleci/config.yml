@@ -17,7 +17,7 @@ references:
 jobs:
   test_clj:
     <<: *base_docker
-    parallelism: 4
+    parallelism: 2
     steps:
       - checkout
       - run: make ci-test
