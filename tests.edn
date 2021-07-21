@@ -1,0 +1,6 @@
+#kaocha/v1
+{:tests [{:id         :clj
+          :ns-patterns [".*"]
+          :test-paths ["test"]}]
+
+ :reporter kaocha.report/documentation}

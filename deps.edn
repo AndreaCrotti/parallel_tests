@@ -1,0 +1,5 @@
+{:paths ["src"]
+ :deps {
+        lambdaisland/kaocha {:mvn/version "1.0.861"}
+        lambdaisland/kaocha-junit-xml {:mvn/version "0.0.76"}
+        lambdaisland/kaocha-cloverage {:mvn/version "1.0.75"}}}
