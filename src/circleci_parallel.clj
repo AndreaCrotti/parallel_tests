@@ -1,12 +1,13 @@
 (ns circleci-parallel
   (:require [clojure.string :as s]
             [clojure.java.shell :as sh]
-            [kaocha.repl :as kr])
+            [kaocha.repl :as kr]
+            [kaocha.testable :as kt])
   (:gen-class))
 
 (defn extract-namespaces []
   (->>  (kaocha.repl/test-plan)
-        kaocha.testable/test-seq
+        kt/test-seq
         (filter #(= :kaocha.type/ns (:kaocha.testable/type %)))
         (map :kaocha.testable/id)
         sort))
